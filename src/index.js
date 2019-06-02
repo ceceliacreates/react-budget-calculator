@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import "./index.css";
+import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 class Step1 extends React.Component {
