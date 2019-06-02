@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+//import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 class Step1 extends React.Component {
@@ -10,30 +10,30 @@ class Step1 extends React.Component {
     }
     return (
       <div className="form">
-        <label for="name">What is your name?</label>
+        <label htmlFor="name">What is your name?</label>
         <input
           id="name"
           type="text"
-          value={this.props.name}
+          //value={this.props.name}
           onChange={this.props.handleChange}
         />
-        <label for="income">
+        <label htmlFor="income">
           What is your monthly take-home (after tax) income?
         </label>
         <input
           id="income"
           type="number"
-          value={this.props.income}
+          //value={this.props.income}
           onChange={this.props.handleChange}
         />
-        <label for="rate">
+        <label htmlFor="rate">
           How much of your income would you like to save? Enter as a decimal.
           For example, enter .20 for 20%.
         </label>
         <input
           id="rate"
           type="number"
-          value={this.props.rate}
+          //value={this.props.rate}
           onChange={this.props.handleChange}
         />
       </div>
@@ -52,34 +52,34 @@ class Step2 extends React.Component {
           Let's take a look at your essential expenses. These are all on a
           monthly basis.
         </h5>
-        <label for="housing">
+        <label htmlFor="housing">
           What is your total housing payment? If you own, include any taxes,
           PMI, or condo fees.
         </label>
         <input
           id="housing"
           type="number"
-          value={this.props.housing}
+          //value={this.props.housing}
           onChange={this.props.handleChange}
         />
-        <label for="utilities">
+        <label htmlFor="utilities">
           How much do you spend on utilities? Include internet and cell phone if
           you consider these essential expenses -- I know I do!
         </label>
         <input
           id="utilities"
           type="number"
-          value={this.props.utilities}
+          //value={this.props.utilities}
           onChange={this.props.handleChange}
         />
-        <label for="groceries">How much do you spend on groceries?</label>
+        <label htmlFor="groceries">How much do you spend on groceries?</label>
         <input
           id="groceries"
           type="number"
-          value={this.props.groceries}
+          //value={this.props.groceries}
           onChange={this.props.handleChange}
         />
-        <label for="insurance">
+        <label htmlFor="insurance">
           How much do you spend on renter/homeowner, auto, health, life, and
           other insurances? Do not include any that are already deducted from
           your paycheck.
@@ -87,10 +87,10 @@ class Step2 extends React.Component {
         <input
           id="insurance"
           type="number"
-          value={this.props.insurance}
+          //value={this.props.insurance}
           onChange={this.props.handleChange}
         />
-        <label for="debt">
+        <label htmlFor="debt">
           What is your total minimum debt payment each month? Include any car
           payments, student loans, personal loans, and minimum credit card
           payments.
@@ -98,16 +98,16 @@ class Step2 extends React.Component {
         <input
           id="debt"
           type="number"
-          value={this.props.debt}
+          //value={this.props.debt}
           onChange={this.props.handleChange}
         />
-        <label for="care">
+        <label htmlFor="care">
           How much do you spend on child, pet, or other care?
         </label>
         <input
           id="care"
           type="number"
-          value={this.props.care}
+          //value={this.props.care}
           onChange={this.props.handleChange}
         />
       </div>
@@ -127,27 +127,27 @@ class Step3 extends React.Component {
           month to month, so go with an average or goal. This is your 'fun
           money'!
         </h5>
-        <label for="food">
+        <label htmlFor="food">
           How much do you spend at restaurants, fast food, coffee shops, and
           bars?
         </label>
         <input
           id="food"
           type="number"
-          value={this.props.food}
+          //value={this.props.food}
           onChange={this.props.handleChange}
         />
-        <label for="shopping">
+        <label htmlFor="shopping">
           What about shopping? This refers to ALL shopping, including personal
           items like toiletries, gifts for others, clothes, etc.
         </label>
         <input
           id="shopping"
           type="number"
-          value={this.props.shopping}
+          //value={this.props.shopping}
           onChange={this.props.handleChange}
         />
-        <label for="entertainment">
+        <label htmlFor="entertainment">
           And finally, what do you spend on entertainment? Include movies, video
           games, subscriptions lik Spotify and Netflix, concerts, sports events,
           etc.
@@ -155,7 +155,7 @@ class Step3 extends React.Component {
         <input
           id="entertainment"
           type="number"
-          value={this.props.entertainment}
+          //value={this.props.entertainment}
           onChange={this.props.handleChange}
         />
         <button onClick={this.props.handleSubmit}>Check Your Budget</button>
@@ -182,17 +182,35 @@ class Calculator extends React.Component {
       shopping: "",
       entertainment: ""
     };
+    this._next = this._next.bind(this);
+    this._prev = this._prev.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  _next() {
+      let currentStep = this.state.currentStep;
+      currentStep = currentStep >= 2? 3 : currentStep + 1;
+      this.setState({
+          currentStep: currentStep
+      })
+  }
+  _prev() {
+      let currentStep = this.state.currentStep;
+      currentStep = currentStep <= 1? 1 : currentStep - 1;
+      this.setState({
+          currentStep: currentStep
+      })
+  }
   handleChange(event) {
-    const { name, value } = event.target;
+    const name = event.target.id;
+    const value = document.getElementById(`${name}`).value;
     this.setState({
-      [name]: value
+     [name]: value
     });
   }
   handleSubmit(event) {
-    event.preventDefault;
+    event.preventDefault();
     const {
       name,
       income,
@@ -211,7 +229,26 @@ class Calculator extends React.Component {
       `Okay, ${name}, with an income of ${income} and a savings rate of ${rate}, you are spending ${housing} on housing, ${utilities} on utilities, ${groceries} on groceries, ${insurance} on insurance, ${debt} on debt, ${care} on care, ${food} on food, ${shopping} on shopping, and ${entertainment} on entertainment.`
     );
   }
+  get previousButton() {
+      let currentStep = this.state.currentStep;
+      if(currentStep !==1) {
+          return (
+              <button onClick={this._prev}>Back</button>
+          )
+      }
+      return null;
+  }
+  get nextButton() {
+      let currentStep = this.state.currentStep;
+      if(currentStep <3) {
+          return(
+              <button onClick={this._next}>Next</button>
+          )
+      }
+      return null;
+  }
   render() {
+      return (
     <React.Fragment>
       <h1>Budget Calculator</h1>
       <p>Step {this.state.currentStep}</p>
@@ -243,11 +280,14 @@ class Calculator extends React.Component {
         shopping={this.state.shopping}
         entertainment={this.state.entertainment}
       />
-    </React.Fragment>;
+      {this.previousButton}
+      {this.nextButton}
+    </React.Fragment>
+      )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Calculator />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
