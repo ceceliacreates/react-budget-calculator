@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/react-budget-calculator/static/css/main.2cce8147.chunk.css",
-    "main.js": "/react-budget-calculator/static/js/main.0b6c5411.chunk.js",
-    "main.js.map": "/react-budget-calculator/static/js/main.0b6c5411.chunk.js.map",
+    "main.css": "/react-budget-calculator/static/css/main.83318d5c.chunk.css",
+    "main.js": "/react-budget-calculator/static/js/main.d3a34ba0.chunk.js",
+    "main.js.map": "/react-budget-calculator/static/js/main.d3a34ba0.chunk.js.map",
     "runtime~main.js": "/react-budget-calculator/static/js/runtime~main.01ca1d82.js",
     "runtime~main.js.map": "/react-budget-calculator/static/js/runtime~main.01ca1d82.js.map",
-    "static/js/2.b41502e9.chunk.js": "/react-budget-calculator/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/react-budget-calculator/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.ffb6a94b.chunk.js": "/react-budget-calculator/static/js/2.ffb6a94b.chunk.js",
+    "static/js/2.ffb6a94b.chunk.js.map": "/react-budget-calculator/static/js/2.ffb6a94b.chunk.js.map",
     "index.html": "/react-budget-calculator/index.html",
-    "precache-manifest.134472f6a4cd7cf28dbc2f559ce7dfab.js": "/react-budget-calculator/precache-manifest.134472f6a4cd7cf28dbc2f559ce7dfab.js",
+    "precache-manifest.8ae3eb5f7005a49449085e3a6a0881df.js": "/react-budget-calculator/precache-manifest.8ae3eb5f7005a49449085e3a6a0881df.js",
     "service-worker.js": "/react-budget-calculator/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/react-budget-calculator/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/react-budget-calculator/static/media/logo.5d5d9eef.svg"
+    "static/css/main.83318d5c.chunk.css.map": "/react-budget-calculator/static/css/main.83318d5c.chunk.css.map"
   }
 }
