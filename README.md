@@ -1,5 +1,8 @@
 # Budget Calculator App (Work in Progress)
 ## Built with React
+
+[Hosted on GitHub Pages](https://ceceliacreates.github.io/react-budget-calculator/)
+
 This is the next iteration of the [BudgetBasic Calculator](https://github.com/ceceliacreates/budget_calculator)
 This will ultimately be part of a larger financial literacy web app with multiple calculators and resources for personal finance for adults.
 
