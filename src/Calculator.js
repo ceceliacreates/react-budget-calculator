@@ -22,13 +22,9 @@ class Calculator extends React.Component {
       shopping: "",
       entertainment: ""
     };
-    this._next = this._next.bind(this);
-    this._prev = this._prev.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  _next() {
+  _next = () => {
     let currentStep = this.state.currentStep;
     currentStep = currentStep >= 2 ? 3 : currentStep + 1;
     this.setState({
@@ -36,7 +32,7 @@ class Calculator extends React.Component {
     });
   }
 
-  _prev() {
+  _prev = () => {
     let currentStep = this.state.currentStep;
     currentStep = currentStep <= 1 ? 1 : currentStep - 1;
     this.setState({
@@ -44,7 +40,7 @@ class Calculator extends React.Component {
     });
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const { name, value } = event.target;
     if (name === "name") {
       this.setState({ [name]: value });
@@ -55,11 +51,11 @@ class Calculator extends React.Component {
     }
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     this.setState({ currentStep: 4 });
   }
 
-  startOver() {
+  startOver = () => {
     this.setState({ currentStep: 1 });
   }
 
