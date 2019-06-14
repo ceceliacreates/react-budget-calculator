@@ -2,6 +2,10 @@
 
 This is the next iteration of the [BudgetBasic calculator](https://github.com/ceceliacreates/budget_calculator) built with JQuery.
 
+[Hosted on GitHub Pages](https://ceceliacreates.github.io/react-budget-calculator/)
+
+I used [this tutorial](https://github.com/gitname/react-gh-pages) to set up GitHub Pages deployment
+
 Features to add:
 
 * More helpful results information
