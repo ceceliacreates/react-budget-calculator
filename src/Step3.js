@@ -21,6 +21,7 @@ const Step3 = function (props) {
           type="number"
           value={props.food}
           onChange={props.handleChange}
+          autoFocus
         />
         <label htmlFor="shopping">
           What about shopping? This refers to ALL shopping, including personal

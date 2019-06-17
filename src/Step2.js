@@ -20,6 +20,7 @@ const Step2 = function (props) {
           type="number"
           value={props.housing}
           onChange={props.handleChange}
+          autoFocus
         />
         <label htmlFor="utilities">
           How much do you spend on utilities? Include internet and cell phone if

@@ -14,6 +14,7 @@ const Step1 = function (props) {
           type="text"
           value={props.name}
           onChange={props.handleChange}
+          autoFocus
         />
         <label htmlFor="income">
           What is your monthly take-home (after tax) income?
@@ -33,7 +34,6 @@ const Step1 = function (props) {
           id="rate"
           type="number"
           name="rate"
-          value={props.rate}
           onChange={props.handleChange}
         />
       </div>
