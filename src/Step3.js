@@ -6,7 +6,7 @@ const Step3 = function (props) {
       return null;
     }
     return (
-      <div className="form">
+      <>
         <h5>
           Now we'll add up your discretionary expenses. These can change from
           month to month, so go with an average or goal.
@@ -47,7 +47,7 @@ const Step3 = function (props) {
           onChange={props.handleChange}
         />
         <button onClick={props.handleSubmit} type="button">Check Your Budget</button>
-      </div>
+        </>
     );
   }
 

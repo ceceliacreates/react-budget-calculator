@@ -30,7 +30,7 @@ class Calculator extends React.Component {
     this.setState({
       currentStep: currentStep
     });
-  }
+  };
 
   _prev = () => {
     let currentStep = this.state.currentStep;
@@ -38,9 +38,9 @@ class Calculator extends React.Component {
     this.setState({
       currentStep: currentStep
     });
-  }
+  };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     if (name === "name") {
       this.setState({ [name]: value });
@@ -49,15 +49,15 @@ class Calculator extends React.Component {
         [name]: parseFloat(value)
       });
     }
-  }
+  };
 
   handleSubmit = () => {
     this.setState({ currentStep: 4 });
-  }
+  };
 
   startOver = () => {
     this.setState({ currentStep: 1 });
-  }
+  };
 
   calculateResults() {
     const {
@@ -122,40 +122,43 @@ class Calculator extends React.Component {
       <>
         <h1>Budget Calculator</h1>
         <p>Step {this.state.currentStep}</p>
-        <Basics
-          currentStep={this.state.currentStep}
-          handleChange={this.handleChange}
-          name={this.state.name}
-          income={this.state.income}
-          rate={this.state.rate}
-        />
+        <div className="form-wrapper">
+          <div className="form">
+            <Basics
+              currentStep={this.state.currentStep}
+              handleChange={this.handleChange}
+              name={this.state.name}
+              income={this.state.income}
+              rate={this.state.rate}
+            />
 
-        <Essential
-          currentStep={this.state.currentStep}
-          handleChange={this.handleChange}
-          housing={this.state.housing}
-          utilities={this.state.utilities}
-          groceries={this.state.groceries}
-          insurance={this.state.insurance}
-          debt={this.state.debt}
-          care={this.state.care}
-        />
+            <Essential
+              currentStep={this.state.currentStep}
+              handleChange={this.handleChange}
+              housing={this.state.housing}
+              utilities={this.state.utilities}
+              groceries={this.state.groceries}
+              insurance={this.state.insurance}
+              debt={this.state.debt}
+              care={this.state.care}
+            />
 
-        <Discretionary
-          currentStep={this.state.currentStep}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          food={this.state.food}
-          shopping={this.state.shopping}
-          entertainment={this.state.entertainment}
-        />
+            <Discretionary
+              currentStep={this.state.currentStep}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              food={this.state.food}
+              shopping={this.state.shopping}
+              entertainment={this.state.entertainment}
+            />
 
-        <Results
-          state={this.state}
-          calculateResults={this.calculateResults}
-          startOver={this.startOver}
-        />
-
+            <Results
+              state={this.state}
+              calculateResults={this.calculateResults}
+              startOver={this.startOver}
+            />
+          </div>
+        </div>
         <div className="buttons">
           {this.previousButton}
           {this.nextButton}

@@ -5,7 +5,7 @@ const Step2 = function (props) {
       return null;
     }
     return (
-      <div className="form">
+      <>
         <h5>
           Now we'll look at your essential expenses. These are all on a monthly
           basis.
@@ -24,7 +24,7 @@ const Step2 = function (props) {
         />
         <label htmlFor="utilities">
           How much do you spend on utilities? Include internet and cell phone if
-          you consider these essential expenses -- I know I do!
+          you consider these essential expenses.
         </label>
         <input
           id="utilities"
@@ -73,7 +73,7 @@ const Step2 = function (props) {
           value={props.care}
           onChange={props.handleChange}
         />
-      </div>
+        </>
     );
   }
 

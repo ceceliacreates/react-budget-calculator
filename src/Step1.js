@@ -5,7 +5,7 @@ const Step1 = function (props) {
       return null;
     }
     return (
-      <div className="form">
+      <>
         <h5>Let's start with the basics.</h5>
         <label htmlFor="name">What is your name?</label>
         <input
@@ -36,7 +36,7 @@ const Step1 = function (props) {
           name="rate"
           onChange={props.handleChange}
         />
-      </div>
+        </>
     );
   }
 
