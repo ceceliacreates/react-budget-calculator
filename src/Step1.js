@@ -26,16 +26,49 @@ const Step1 = function (props) {
           value={props.income}
           onChange={props.handleChange}
         />
-        <label htmlFor="rate">
-          How much of your income would you like to save? Enter as a decimal.
-          For example, enter .20 for 20%.
+        <label style={{display: "block"}}>
+          How much of your income would you like to save? 
         </label>
+        <label>
         <input
-          id="rate"
-          type="number"
+          value={0}
+          type="radio"
           name="rate"
           onChange={props.handleChange}
+          style={{display: "inline", margin: "5px"}}
         />
+        0%
+        </label>
+        <label>
+        <input
+          value={.1}
+          type="radio"
+          name="rate"
+          onChange={props.handleChange}
+          style={{display: "inline", margin: "5px"}}
+        />
+        10%
+        </label>
+        <label>
+        <input
+          value={.2}
+          type="radio"
+          name="rate"
+          onChange={props.handleChange}
+          style={{display: "inline", margin: "5px"}}
+        />
+        20%
+        </label>
+        <label>
+        <input
+          value={.25}
+          type="radio"
+          name="rate"
+          onChange={props.handleChange}
+          style={{display: "inline", margin: "5px"}}
+        />
+        25%
+        </label>
         </>
     );
   }
