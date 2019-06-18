@@ -95,7 +95,7 @@ class Calculator extends React.Component {
 
   get previousButton() {
     let currentStep = this.state.currentStep;
-    if (currentStep > 1 && currentStep < 3) {
+    if (currentStep > 1 && currentStep < 4) {
       return (
         <button id="back" onClick={this._prev}>
           Back
