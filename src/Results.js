@@ -11,9 +11,9 @@ const Results = function (props) {
             <p>Essential Expenses: {results.essential}</p>
             <p>Discretionary Expenses: {results.discretionary}</p>
             <p>Total Spending: {results.spending}</p>
-            <p>Desired Savings Amount: {results.desiredSavings}</p>
-            <p>Amount Left After Spending: {results.afterSpending}</p>
-            <p>Amount Left After Savings: {results.afterSavings}</p>
+            <p>Desired Savings Amount: {results.desiredSavings} </p>
+            <p>Amount Left After Spending: <span style={results.afterSpending > 0 ? {color: "green"}: {color: "red"}}>{results.afterSpending}</span></p>
+            <p>Amount Left After Savings: <span style={results.afterSavings > 0 ? {color: "green"}: {color: "red"}}> {results.afterSavings} </span></p>
             <button type="button" onClick={props.startOver}>Start Over</button>
         </div>
     )
