@@ -133,6 +133,7 @@ class Calculator extends React.Component {
             />
 
             <Essential
+              name={this.state.name}
               currentStep={this.state.currentStep}
               handleChange={this.handleChange}
               housing={this.state.housing}

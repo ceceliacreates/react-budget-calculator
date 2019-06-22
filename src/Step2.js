@@ -7,7 +7,7 @@ const Step2 = function (props) {
     return (
       <>
         <h5>
-          Now we'll look at your essential expenses. These are all on a monthly
+          Hi {props.name}! Now we'll look at your essential expenses. These are all on a monthly
           basis.
         </h5>
         <label htmlFor="housing">
